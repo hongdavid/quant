@@ -1,0 +1,79 @@
+<html>
+<title>
+option calculate
+</title>
+<head>
+ <link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
+    <link href="css/model.css" rel="stylesheet" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="js/angular.min.js"></script>
+<script src="js/function/model/model.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers/maincontroller.js"></script>
+
+<body ng-app='b_sgreeks'>
+
+<div class='header'>
+<div class='container'>
+<h1>option-greeks</h1>
+</div>
+</div>
+
+<div class='main' ng-controller='maincontroller'>
+<div class='container'>
+<h1>{{title}}</h1>
+
+
+<table>
+ </td>
+<td width = "30px">
+<td>
+<h3>MODEL:</h3>
+  <h3><select ng-model=select1 ng-options="ch1.choose_1 for ch1 in c_p" id='s1'>
+    <option value="">-- 請選擇 --</option>
+  </select></h3>
+ </td>
+<td width = "50px">
+</td>
+  <td>
+ <h3>OPTION:</h3>
+ <h3><select ng-model=select2 ng-options="ch2.choose_2 for ch2 in c_p" id='s2'>
+    <option value="">-- 請選擇 --</option>
+  </select></h3>
+</td>
+<td width = "100px">
+</td>
+
+<td>
+<button type="button" onclick="go()" style="background-color:#99CCFF;
+width:200;height:90">
+<h3><b>calculate</b></h3></button></td>
+
+</table>
+
+
+<table>
+<td>
+<ul class="factors">
+ <li ng-repeat='f in factor'>
+<h3>{{f.name}}</h3>
+<input type='number' id={{f.ge}} >
+ </li>
+</ul>
+</td>
+<td>
+<ul class="result">
+ <li ng-repeat='re in factor'>
+<h3>{{re.result}}</h3>
+<input type='number' id={{re.re_id}} >
+ </li>
+</ul>
+</td>
+</table>
+
+</div>
+</div>
+
+</body>
+</html>

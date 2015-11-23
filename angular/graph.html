@@ -1,0 +1,139 @@
+<html>
+<title>
+option graph
+</title>
+<head>
+ <link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
+    <link href="css/graph.css" rel="stylesheet" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">     
+<script type="text/javascript" src="js/function/graph/jquery1.js"></script>
+<script type="text/javascript" src="js/function/graph/jquery.flot1.js"></script>
+
+ <script type="text/javascript" src="js/function/graph/jquery.flot.symbol1.js"></script>
+ <script type="text/javascript" src="js/function/graph/jquery.flot.axislabels.js"></script>
+ <script type="text/javascript" src="js/function/graph/bs_function1.js"></script>
+ <script type="text/javascript" src="js/function/graph/graph.js"></script>
+ 
+	 
+<script src="js/angular.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers/maincontroller.js"></script>
+
+</head>
+<body ng-app='b_s_graph'>
+<div class='header'>
+<div class='container'>
+<h1>option-graph</h1>
+</div>
+</div>
+
+<div class='main' ng-controller='maincontroller'>
+<div class='container'>
+<table>
+
+
+<td><h3>MODEL</h3></td>
+<td width = "200px">
+</td>
+<td><h3>factor/call-put</h3></td>
+<td width = "100px">
+</td>
+<td><h3>factor/greeks</h3></td>
+<td width = "100px">
+</td>
+<td><h3>graph1-range</h3></td>
+<td width = "100px">
+</td>
+<td><h3>graph2-range</h3></td>
+</table>
+
+<table>
+<tr>
+<td>
+<h2><select ng-model=select1 ng-options="chos1.ch1 for chos1 in ch_1" id='s1' onchange='go1(),go2()'>
+    <option value="">-- 請選擇 --</option>
+  </select></h2>
+ </td>
+<td width = "40px">
+</td>
+ 
+ <td>
+ Axis:X
+  <h2><select ng-model=select2 ng-options="chos2.ch2 for chos2 in ch_2" id='s2' onchange='go1()'>
+    <option value="">-- 請選擇 --</option>
+  </select></h2>
+ Axis:Y
+<h2><select ng-model=select3 ng-options="chos3.ch3 for chos3 in ch_3" id='s3' onchange='go1()'>
+    <option value="">-- 請選擇 --</option>
+  </select></h2> 
+  </td>
+
+ <td width = "150px">
+</td>
+
+  <td>
+   Axis:X
+  <h2><select ng-model=select4 ng-options="chos4.ch2 for chos4 in ch_2" id='s4' onchange='go2()'>
+    <option value="">-- 請選擇 --</option>
+  </select></h2>
+   Axis:Y
+  <h2><select ng-model=select5 ng-options="chos5.ch4 for chos5 in ch_4" id='s5' onchange='go2()'>
+    <option value="">-- 請選擇 --</option>
+  </select></h2>
+ </td>
+ 
+<td width = "110px">
+</td>
+ 
+   <td>
+  <div ng-repeat='g in t_1'>
+<h3>{{g.t1}}</h3>
+<input type='number' id={{g.id_t1}} value={{g.val}} onchange='go1()'>
+</div>
+  </td>
+ 
+ <td width = "30px">
+</td>
+ 
+ <td>
+  <div ng-repeat='g in t_1'>
+<h3>{{g.t1}}</h3>
+<input type='number' id={{g.id_t2}} value={{g.val}} onchange='go2()'>
+</div>
+</td>
+
+</tr>
+   </table>
+  
+  <table>
+  <td>
+  
+  <li ng-repeat='g in ch_2'>
+<h3>{{g.ch2}}</h3>
+<input type='number' id={{g.id_1}} value={{g.val}} onchange='go1(),go2()'>
+
+<li ng-repeat='g in ch_2_1'>
+<h3>{{g.ch2}}</h3>
+<input type='number' id={{g.id_1}} value={{g.val}} onchange='go1(),go2()'>
+</li>
+
+</td>
+  
+</table>	
+
+    <div id="yyyy" style='width:500px;height:400px;'></div>
+    <div id="xxxx" style='width:500px;height:400px;'></div>
+	
+<h3 id='x1'></h3>
+<h3 id='y1'></h3>
+<h3 id='x2'></h3>
+<h3 id='y2'></h3>
+  </div>
+</div>
+
+
+
+</body>
+
+</html>
